@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="5163" started-at="2020-10-30T14:59:49Z" finished-at="2020-10-30T14:59:54Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="5163" started-at="2020-10-30T14:59:49Z" finished-at="2020-10-30T14:59:54Z">
+      <class name="Reflektion.org.Reflektion.BasePage">
+        <test-method status="PASS" signature="verifyAtlestHundredRecordsAreBeingReturned()[pri:0, instance:Reflektion.org.Reflektion.BasePage@6a4f787b]" name="verifyAtlestHundredRecordsAreBeingReturned" duration-ms="3213" started-at="2020-10-30T14:59:49Z" finished-at="2020-10-30T14:59:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAtlestHundredRecordsAreBeingReturned -->
+        <test-method status="PASS" signature="verifyInvalidGetRequest()[pri:0, instance:Reflektion.org.Reflektion.BasePage@6a4f787b]" name="verifyInvalidGetRequest" duration-ms="964" started-at="2020-10-30T14:59:52Z" finished-at="2020-10-30T14:59:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyInvalidGetRequest -->
+        <test-method status="PASS" signature="verifyOnlyOneRecordIsBeingReturned()[pri:0, instance:Reflektion.org.Reflektion.BasePage@6a4f787b]" name="verifyOnlyOneRecordIsBeingReturned" duration-ms="927" started-at="2020-10-30T14:59:53Z" finished-at="2020-10-30T14:59:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyOnlyOneRecordIsBeingReturned -->
+      </class> <!-- Reflektion.org.Reflektion.BasePage -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
