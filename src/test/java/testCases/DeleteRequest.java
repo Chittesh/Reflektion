@@ -3,6 +3,11 @@ package testCases;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+
 import Reflektion.org.Reflektion.BasePage;
 import Reflektion.org.Reflektion.EnvironmentURLS;
 import Reflektion.org.Reflektion.StaticData;
@@ -26,6 +31,11 @@ public class DeleteRequest {
 		System.out.println("Verfying Status Code");
 		Assert.assertEquals(response.getStatusCode(), StaticData.status_200,
 				"Verify Status : " + response.getStatusCode());
+		
+		
+		System.out.println("Response is : " + response.asString());
+		Assert.assertEquals(response.asString(), "{}"," Verify response");
+		
 		
 		System.out.println("Completed Executing verifyDeleteRequest Test Case");
 		System.out.println("****************************************************************");
