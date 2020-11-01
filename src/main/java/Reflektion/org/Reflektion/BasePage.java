@@ -24,6 +24,7 @@ import io.restassured.response.Response;
 public class BasePage {
 	
 	public BasePage() {
+		System.out.println("Base URL is : " + EnvironmentURLS.getBaseUrl());
 		RestAssured.baseURI = EnvironmentURLS.getBaseUrl();
 	}
 
@@ -61,12 +62,37 @@ public class BasePage {
 
 	}
 	
+	public Response getResponseForDelete(String urls) {
+		Response response = given()
+							.header(StaticData.contentHeader, StaticData.contentTypeJson)
+							.log().all()
+							.when()
+							.delete(urls)
+							.then()
+							.extract()
+							.response();
+		return response;
+
+	}
+	
 	public Response getResponseForPost(String jsonBody, String postingUrl) {
 		Response response = given()
 							.header(StaticData.contentHeader, StaticData.contentTypeJson)
 							.body(jsonBody)
 							.when()
 							.post(postingUrl)
+							.then()
+							.extract()
+							.response();
+		return response;
+	}
+	
+	public Response getResponseForPut(String jsonBody, String postingUrl) {
+		Response response = given()
+							.header(StaticData.contentHeader, StaticData.contentTypeJson)
+							.body(jsonBody)
+							.when()
+							.put(postingUrl)
 							.then()
 							.extract()
 							.response();

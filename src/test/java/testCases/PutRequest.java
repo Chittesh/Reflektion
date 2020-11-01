@@ -1,5 +1,6 @@
 package testCases;
 
+
 import java.util.HashMap;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,24 +13,26 @@ import io.restassured.response.Response;
 
 /**
  * @author chicharles
- * @Description :Test cases for Post Request
+ * @Description : Test cases for Put Request
  *
  */
-public class PostRequest {
+public class PutRequest {
 
 	@Test()
-	public void verifyPostRequest() {
+	public void verifyPutRequest() {
 		System.out.println("****************************************************************");
-		System.out.println("Executing verifyPostRequest Test Case");
+		System.out.println("Executing verifyPutRequest Test Case");
 
 		BasePage objBasePage = new BasePage();
-		String jsonBody = "{\r\n" + "\"title\": \"foo\",\r\n" + "\"body\": \"bar\",\r\n" + "\"userId\": 1\r\n" + "}";
+		String jsonBody = "{\r\n" + "\"id\": 1,\r\n" + "\"title\": \"abc\",\r\n" + "\"body\": \"xyz\",\r\n"
+				+ "\"userId\": 1\r\n" + "}";
 		System.out.println("JSON Body is : " + jsonBody);
 
-		Response response = objBasePage.getResponseForPost(jsonBody, EnvironmentURLS.getpostsUrl());
+		Response response = objBasePage.getResponseForPut(jsonBody,
+				EnvironmentURLS.getpostsUrl() + EnvironmentURLS.getInputUrl());
 		System.out.println("Status Code of Response is : " + response.getStatusCode());
 		System.out.println("Verfying Status Code");
-		Assert.assertEquals(response.getStatusCode(), StaticData.status_201,
+		Assert.assertEquals(response.getStatusCode(), StaticData.status_200,
 				"Verify Status : " + response.getStatusCode());
 
 		JsonParser p = new JsonParser();
@@ -41,12 +44,12 @@ public class PostRequest {
 		objBasePage.printOutHashMap(hmObject);
 
 		System.out.println("Verifying the response");
-		Assert.assertEquals(hmObject.get("title"), "\"foo\"", "Verify Title");
-		Assert.assertEquals(hmObject.get("body"), "\"bar\"", "Verify Body");
+		Assert.assertEquals(hmObject.get("title"), "\"abc\"", "Verify Title");
+		Assert.assertEquals(hmObject.get("body"), "\"xyz\"", "Verify Body");
 		Assert.assertEquals(hmObject.get("userId"), "1", "Verify userId");
-		Assert.assertEquals(hmObject.get("id"), "101", "Verify id");
+		Assert.assertEquals(hmObject.get("id"), "1", "Verify id");
 
-		System.out.println("Completed Executing verifyPostRequest Test Case");
+		System.out.println("Completed Executing verifyPutRequest Test Case");
 		System.out.println("****************************************************************");
 
 	}

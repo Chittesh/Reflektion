@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4086" started-at="2020-10-31T05:07:09Z" finished-at="2020-10-31T05:07:13Z">
+  <suite name="Suite" duration-ms="6327" started-at="2020-11-01T03:20:57Z" finished-at="2020-11-01T03:21:04Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4086" started-at="2020-10-31T05:07:09Z" finished-at="2020-10-31T05:07:13Z">
-      <class name="testCases.PostRequest">
-        <test-method status="PASS" signature="verifyAtlestHundredRecordsAreBeingReturned()[pri:0, instance:testCases.PostRequest@42d80b78]" name="verifyAtlestHundredRecordsAreBeingReturned" duration-ms="4041" started-at="2020-10-31T05:07:09Z" finished-at="2020-10-31T05:07:13Z">
+    <test name="Test" duration-ms="6327" started-at="2020-11-01T03:20:57Z" finished-at="2020-11-01T03:21:04Z">
+      <class name="testCases.DeleteRequest">
+        <test-method status="PASS" signature="verifyDeleteRequest()[pri:0, instance:testCases.DeleteRequest@5c3bd550]" name="verifyDeleteRequest" duration-ms="879" started-at="2020-11-01T03:21:01Z" finished-at="2020-11-01T03:21:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDeleteRequest -->
+      </class> <!-- testCases.DeleteRequest -->
+      <class name="testCases.GetRequest">
+        <test-method status="PASS" signature="verifyAtlestHundredRecordsAreBeingReturned()[pri:0, instance:testCases.GetRequest@5e3a8624]" name="verifyAtlestHundredRecordsAreBeingReturned" duration-ms="2883" started-at="2020-11-01T03:20:57Z" finished-at="2020-11-01T03:21:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAtlestHundredRecordsAreBeingReturned -->
+        <test-method status="PASS" signature="verifyInvalidGetRequest()[pri:0, instance:testCases.GetRequest@5e3a8624]" name="verifyInvalidGetRequest" duration-ms="377" started-at="2020-11-01T03:21:00Z" finished-at="2020-11-01T03:21:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyInvalidGetRequest -->
+        <test-method status="PASS" signature="verifyOnlyOneRecordIsBeingReturned()[pri:0, instance:testCases.GetRequest@5e3a8624]" name="verifyOnlyOneRecordIsBeingReturned" duration-ms="367" started-at="2020-11-01T03:21:01Z" finished-at="2020-11-01T03:21:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyOnlyOneRecordIsBeingReturned -->
+      </class> <!-- testCases.GetRequest -->
+      <class name="testCases.PutRequest">
+        <test-method status="PASS" signature="verifyPutRequest()[pri:0, instance:testCases.PutRequest@604ed9f0]" name="verifyPutRequest" duration-ms="815" started-at="2020-11-01T03:21:03Z" finished-at="2020-11-01T03:21:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPutRequest -->
+      </class> <!-- testCases.PutRequest -->
+      <class name="testCases.PostRequest">
+        <test-method status="PASS" signature="verifyPostRequest()[pri:0, instance:testCases.PostRequest@91161c7]" name="verifyPostRequest" duration-ms="919" started-at="2020-11-01T03:21:02Z" finished-at="2020-11-01T03:21:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPostRequest -->
       </class> <!-- testCases.PostRequest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
