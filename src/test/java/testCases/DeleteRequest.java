@@ -10,6 +10,7 @@ import com.google.gson.JsonParser;
 
 import Reflektion.org.Reflektion.BasePage;
 import Reflektion.org.Reflektion.EnvironmentURLS;
+import Reflektion.org.Reflektion.Log;
 import Reflektion.org.Reflektion.StaticData;
 import io.restassured.response.Response;
 
@@ -18,27 +19,22 @@ import io.restassured.response.Response;
  * @Description : Test cases for Delete Request
  *
  */
-public class DeleteRequest {
+public class DeleteRequest extends Log{
 
 	@Test()
 	public void verifyDeleteRequest() {
-		System.out.println("****************************************************************");
-		System.out.println("Executing verifyDeleteRequest Test Case");
+		Log.startTestCase("Verify Delete Request");
 		
 		BasePage objBasePage = new BasePage();
 		Response response = objBasePage.getResponseForDelete(EnvironmentURLS.getpostsUrl() + EnvironmentURLS.getInputUrl());
-		System.out.println("Status Code of Response is : " + response.getStatusCode());
-		System.out.println("Verfying Status Code");
+		Log.info("Verfy Status Code of API Response Actual : " + response.getStatusCode() + " Expected : "
+				+ StaticData.status_200);
 		Assert.assertEquals(response.getStatusCode(), StaticData.status_200,
-				"Verify Status : " + response.getStatusCode());
-		
-		
-		System.out.println("Response is : " + response.asString());
+				"Status Assertion Failed : " + response.getStatusCode());
+		Log.info("Response is : " + response.asString());
 		Assert.assertEquals(response.asString(), "{}"," Verify response");
 		
-		
-		System.out.println("Completed Executing verifyDeleteRequest Test Case");
-		System.out.println("****************************************************************");
+		Log.startTestCase("Verify Delete Request");
 
 	}
 

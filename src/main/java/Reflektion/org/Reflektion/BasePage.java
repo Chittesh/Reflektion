@@ -21,10 +21,9 @@ import io.restassured.response.Response;
  * @Description : This Page contains reusable methods
  *
  */
-public class BasePage {
+public class BasePage{
 	
 	public BasePage() {
-		System.out.println("Base URL is : " + EnvironmentURLS.getBaseUrl());
 		RestAssured.baseURI = EnvironmentURLS.getBaseUrl();
 	}
 
@@ -156,9 +155,11 @@ public class BasePage {
 	 * @Date : 11/1/2020
 	 */
 	public void printOutHashMap(HashMap<String, String> hmObject) {
+		Log.info("****************************************************************************");
 		hmObject.entrySet().forEach(entry -> {
-			System.out.println("Object Key id : '"+ entry.getKey() + "' - Object value is : '" + entry.getValue()+"'");
+			Log.info("Object Key id : '"+ entry.getKey() + "' - Object value is : '" + entry.getValue()+"'");
 		});
+		Log.info("****************************************************************************");
 	}
 	
 	

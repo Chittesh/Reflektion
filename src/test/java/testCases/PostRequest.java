@@ -7,6 +7,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import Reflektion.org.Reflektion.BasePage;
 import Reflektion.org.Reflektion.EnvironmentURLS;
+import Reflektion.org.Reflektion.Log;
 import Reflektion.org.Reflektion.StaticData;
 import io.restassured.response.Response;
 
@@ -15,39 +16,38 @@ import io.restassured.response.Response;
  * @Description :Test cases for Post Request
  *
  */
-public class PostRequest {
+public class PostRequest extends Log{
 
 	@Test()
 	public void verifyPostRequest() {
-		System.out.println("****************************************************************");
-		System.out.println("Executing verifyPostRequest Test Case");
+		Log.startTestCase("Verify Post Request");
 
 		BasePage objBasePage = new BasePage();
 		String jsonBody = "{\r\n" + "\"title\": \"foo\",\r\n" + "\"body\": \"bar\",\r\n" + "\"userId\": 1\r\n" + "}";
-		System.out.println("JSON Body is : " + jsonBody);
+		Log.info("JSON Body is : " + jsonBody);
 
 		Response response = objBasePage.getResponseForPost(jsonBody, EnvironmentURLS.getpostsUrl());
-		System.out.println("Status Code of Response is : " + response.getStatusCode());
-		System.out.println("Verfying Status Code");
+		Log.info("Verfy Status Code of API Response Actual : " + response.getStatusCode() + " Expected : "
+				+ StaticData.status_201);
 		Assert.assertEquals(response.getStatusCode(), StaticData.status_201,
-				"Verify Status : " + response.getStatusCode());
-
+				"Status Assertion Failed : " + response.getStatusCode());
 		JsonParser p = new JsonParser();
 		JsonElement objJsonElement = p.parse(response.asString());
-
 		HashMap<String, String> hmObject = new HashMap<String, String>();
 		hmObject = objBasePage.getKeysMehthod(objJsonElement);
-		System.out.println("Printing out all values from the response schema");
+		Log.info("Printing out all values from the response schema");
 		objBasePage.printOutHashMap(hmObject);
 
-		System.out.println("Verifying the response");
+		Log.info("Verifying response title Acutal : " + hmObject.get("title") + "Expected is : \"foo\"");
 		Assert.assertEquals(hmObject.get("title"), "\"foo\"", "Verify Title");
+		Log.info("Verifying response body Acutal : " + hmObject.get("body") + "Expected is : \"bar\"");
 		Assert.assertEquals(hmObject.get("body"), "\"bar\"", "Verify Body");
+		Log.info("Verifying response userId Acutal : " + hmObject.get("userId") + "Expected is : 1");
 		Assert.assertEquals(hmObject.get("userId"), "1", "Verify userId");
+		Log.info("Verifying response userId Acutal : " + hmObject.get("id") + "Expected is : 101");
 		Assert.assertEquals(hmObject.get("id"), "101", "Verify id");
-
-		System.out.println("Completed Executing verifyPostRequest Test Case");
-		System.out.println("****************************************************************");
+		
+		Log.endTestCase("Verify Post Request");
 
 	}
 

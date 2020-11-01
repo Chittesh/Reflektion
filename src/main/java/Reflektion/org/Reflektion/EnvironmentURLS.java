@@ -7,7 +7,7 @@ import java.util.ResourceBundle;
  * @Description : This class contains common method to fetch the API urls
  *
  */
-public class EnvironmentURLS {
+public class EnvironmentURLS extends Log{
 	static ResourceBundle userCreditinals = ResourceBundle.getBundle("urls");
 
 	/**
@@ -17,6 +17,7 @@ public class EnvironmentURLS {
 	 * @Date : 11/1/2020
 	 */
 	public static String getBaseUrl() {
+		Log.info("BASE URL : "+userCreditinals.getString("baseUrl"));
 		return userCreditinals.getString("baseUrl");
 	}
 
@@ -27,6 +28,7 @@ public class EnvironmentURLS {
 	 * @Date : 11/1/2020
 	 */
 	public static String getpostsUrl() {
+		Log.info("Append POST URL : "+userCreditinals.getString("posts"));
 		return userCreditinals.getString("posts");
 	}
 
@@ -37,6 +39,7 @@ public class EnvironmentURLS {
 	 * @Date : 11/1/2020
 	 */
 	public static String getInputUrl() {
+		Log.info("Append Input URL : "+userCreditinals.getString("input_1"));
 		return userCreditinals.getString("input_1");
 	}
 
@@ -47,6 +50,7 @@ public class EnvironmentURLS {
 	 * @Date : 11/1/2020
 	 */
 	public static String getInvalidUrl() {
+		Log.info("Append Invalid URL : "+userCreditinals.getString("invalid"));
 		return userCreditinals.getString("invalid");
 	}
 
