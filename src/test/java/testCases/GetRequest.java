@@ -32,7 +32,7 @@ import io.restassured.response.Response;
 public class GetRequest extends Log {
 
 	@Test()
-	public void verifyAtlestHundredRecordsAreBeingReturned() {
+	public void verifyGetAtleastHundredRecords() {
 		Log.startTestCase("Verify At least Hundred Records Are Being Returned");
 
 		BasePage objBasePage = new BasePage();
@@ -54,7 +54,7 @@ public class GetRequest extends Log {
 	}
 
 	@Test()
-	public void verifyOnlyOneRecordIsBeingReturned() {
+	public void verifyGetOnlyOneRecord() {
 		Log.startTestCase("Verify Only One Record Is Being Returned");
 
 		BasePage objBasePage = new BasePage();
@@ -82,7 +82,7 @@ public class GetRequest extends Log {
 	}
 
 	@Test()
-	public void verifyInvalidGetRequest() {
+	public void verifyGetRequestWithInvalidUrl() {
 		Log.startTestCase("verify Invalid Get Request");
 
 		BasePage objBasePage = new BasePage();
